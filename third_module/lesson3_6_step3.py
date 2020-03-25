@@ -7,11 +7,11 @@ import time
 import math
 
 
-@pytest.fixture(scope="session")
-def browser():
-    browser = webdriver.Chrome()
-    yield browser
-    browser.quit()
+# @pytest.fixture(scope="session")
+# def browser():
+#     browser = webdriver.Chrome()
+#     yield browser
+#     browser.quit()
 
 
 @pytest.mark.parametrize('number', [
