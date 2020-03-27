@@ -1,14 +1,21 @@
 """
+Для проверяющего:
 Прошу прощения, но я не буду создавать отдельный репозиторий для этого теста.
-Если вы скачали полностью проект, то - cd language_test_for_review/
-Раскомментируйте строку time.sleep(30) при проверке,
-pytest --language=es
-pytest --language=fr
+
+Если вы скачали полностью проект, то:
+1. Перенесите папку language_test_for_review к себе в проект для проверки.
+2. cd language_test_for_review/
+3. Раскомментируйте строку time.sleep(30), как требует критерий проверки.
+4. pytest --language=es
+5. pytest --language=fr
 Или другой поддерживаемый язык.
+
 Можно проверить через браузеры: chrome(по умолчанию) или
 firefox(нужно добавить в команду терминала --browser_name=firefox)
+
 Спасибо.
 """
+
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -25,4 +32,4 @@ def test_product_page_contains_a_button_to_add_to_cart(browser):
         EC.visibility_of_element_located((By.CLASS_NAME, 'btn-add-to-basket'))
     )
 
-    assert add_btn
+    assert add_btn, 'success if add button exist'
